@@ -17,6 +17,8 @@
 | Orchestration      | Apache Airflow (Astro Cosmos)          |
 | Containerization   | Docker                                 |
 
+![Banner](https://media.licdn.com/dms/image/v2/D4D10AQGvGTJ0d90WkA/image-shrink_800/image-shrink_800/0/1707302479959?e=2147483647&v=beta&t=gn4nz7vAe8PkwdGp3I3sHQSmBaufD__nn1Hr0sbt2AQ)  
+
 ---
 
 ## 🛠 Hướng dẫn Setup và Triển khai
