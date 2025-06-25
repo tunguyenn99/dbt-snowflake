@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: tpch
+    database: snowflake_sample_data
+    schema: tpch_sf1 
+    tables: 
+      - name: orders 
+        columns: 
+          - name: o_orderkey 
+            tests: 
+              - not_null # Kiểm tra không có giá trị null --> PK
+              - unique # Kiểm tra distinct --> PK
+      - name: lineitem 
+        columns:
+          - name: l_orderkey 
+            tests: 
+              - relationships:
+                  to: source('tpch', 'orders') # Kiểm tra quan hệ với bảng orders trong cùng schema
+                  field: o_orderkey # Trường khóa chính trong bảng orders
+                 

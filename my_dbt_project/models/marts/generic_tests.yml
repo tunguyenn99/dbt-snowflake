@@ -1,0 +1,15 @@
+models: 
+  - name: fct_orders
+    columns:
+      - name: order_key
+        tests:
+          - not_null # Kiểm tra không có giá trị null
+          - unique # Kiểm tra distinct
+          - relationships:
+              to: ref('stg_tpch_orders') # Kiểm tra quan hệ với bảng stg_orders trong cùng schema
+              field: order_key # Trường khóa chính trong bảng 
+              severity: warn # Cảnh báo nếu không có quan hệ
+      - name: order_status
+        tests:
+          - accepted_values:
+              values: ['F', 'O', 'P'] # Kiểm tra giá trị hợp lệ
